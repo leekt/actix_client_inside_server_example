@@ -1,0 +1,14 @@
+[package]
+name = "actix_web_test"
+version = "0.1.0"
+authors = ["leekt <leekt216@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = {version = "1.0.8", features=["ssl"]}
+actix-rt = "0.2.5"
+actix-http = "0.2.10"
+futures = "0.1.29"
+bytes = "0.4.12"
