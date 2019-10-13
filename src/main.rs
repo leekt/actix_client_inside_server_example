@@ -28,7 +28,6 @@ fn proxy_service() -> impl Future<Item=bytes::Bytes,Error=Error>{
 
 fn proxy_handler() -> impl Future<Item=Response, Error=Error> {
     proxy_service().and_then(|body| HttpResponse::Ok().content_type("text/html").body(body))
-    //HttpResponse::Ok().content_type("text/html").body(proxy_service().wait().unwrap())
 }
 
 pub fn main() {
