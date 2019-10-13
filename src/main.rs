@@ -1,5 +1,5 @@
 use actix_web::{
-    self, middleware, web, App, Error, HttpResponse, HttpServer,
+    self, middleware, web, App, Error, HttpServer,
 };
 use actix_http::{
     Response
@@ -27,7 +27,7 @@ fn proxy_service() -> impl Future<Item=bytes::Bytes,Error=Error>{
 }
 
 fn proxy_handler() -> impl Future<Item=Response, Error=Error> {
-    proxy_service().and_then(|body| HttpResponse::Ok().content_type("text/html").body(body))
+    proxy_service().and_then(|body| Response::Ok().content_type("text/html").body(body))
 }
 
 pub fn main() {
